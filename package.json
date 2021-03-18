@@ -7,6 +7,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^6.0.1",
     "axios": "^0.21.1",
     "lib-flexible": "^0.3.2",
     "vant": "^3.0.6",
