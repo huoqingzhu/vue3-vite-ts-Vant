@@ -1,18 +1,7 @@
 import axios from "axios";
-function getQueryString(name: string): number {
-  const reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-  const r = window.location.search.substr(1).match(reg);
-  if (r != null) return Number(unescape(r[2]));
-  return 0;
-}
-let baseURL = "http://123.56.85.24:5000/api/";
-if (getQueryString("ip") == 1) {
-  baseURL = "http://123.56.85.24:5000/api/";
-} else if (getQueryString("ip") == 2) {
-  baseURL = "http://fq.lycent.cn/api";
-} else {
-  baseURL = "http://123.56.85.24:5000/api";
-}
+
+let baseURL = "/api";
+
 const service = axios.create({
   baseURL,
   timeout: 5000 // request timeout

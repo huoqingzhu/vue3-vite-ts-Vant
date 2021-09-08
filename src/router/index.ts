@@ -83,7 +83,8 @@ const routes: Array<RouteRecordRaw> = [
   },
 ];
 const router = createRouter({
-  history: createWebHistory(),
-  routes
+  history: createWebHashHistory(),
+  routes,
+  
 });
 export default router;

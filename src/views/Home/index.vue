@@ -70,8 +70,14 @@ watch(
   (a, b) => {
     state.show = true;
     article().then((res: any) => {
-      res.sort(() => (Math.random() > 0.5 ? -1 : 1));
-      state.listData = res;
+     const list=Array.from({length: 30}).map((item,index)=>{
+       return {
+         _id:index,
+         title:`${index}`
+       }
+     })
+     console.log(list)
+      state.listData = list;
       state.show = false;
     });
   },
