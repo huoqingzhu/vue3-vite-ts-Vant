@@ -1,10 +1,6 @@
 <template>
   <div>
-    <h1>本地列表</h1>
-    <div v-for="(item, index) in listData" :key="index" class="box">
-      {{ item.name }}
-    </div>
-    <button @click="addData">新增数据</button>
+    <van-button type="primary" @click="logout">退出登陆</van-button>
   </div>
 </template>
 <script lang="ts">
@@ -14,26 +10,15 @@ import {
   onMounted,
   reactive,
   toRefs,
-} from "vue";
-
+} from "vue"; 
+import {useRouter} from "vue-router"
 export default defineComponent({
   setup() {
-    const state: { listData: { name: number }[] } = reactive({
-      listData: [{ name: 0 }],
-    });
-    onMounted(() => {
-      const data: any = localStorage.getItem("listData");
-      if (data) {
-        state.listData = JSON.parse(data);
-      }
-    });
-    const addData = () => {
-      state.listData.push({ name: state.listData.length });
-    };
-    onBeforeUnmount(() => {
-      localStorage.setItem("listData", JSON.stringify(state.listData));
-    });
-    return { ...toRefs(state), addData };
+    const router = useRouter()
+    const logout=()=>{
+        router.push('login')
+    }
+    return {logout}
   },
 });
 </script>

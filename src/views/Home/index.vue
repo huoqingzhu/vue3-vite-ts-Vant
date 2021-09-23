@@ -9,7 +9,6 @@
       <van-col span="18">
         <van-search
           @focus="focus"
-          v-model="value"
           placeholder="请输入搜索关键词"
         />
       </van-col>
@@ -44,10 +43,8 @@
 import { reactive, watch } from "vue";
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
-import { article } from "@/api/index";
 import List from "@/components/List/index.vue";
 const router = useRouter();
-const store = useStore();
 const state = reactive({
   TabDara: [
     "关注",
@@ -68,20 +65,21 @@ const state = reactive({
 watch(
   () => state.active,
   (a, b) => {
-    state.show = true;
-    article().then((res: any) => {
-     const list=Array.from({length: 30}).map((item,index)=>{
-       return {
-         _id:index,
-         title:`${index}`
-       }
-     })
-     console.log(list)
+  state.show = true;
+  const list=Array.from({length: 30}).map((item,index)=>{
+      return {
+        _id:index,
+        title:`${index}`
+      }
+    })
+     //@ts-ignore
       state.listData = list;
       state.show = false;
-    });
   },
-  { immediate: true }
+  {
+    immediate:true,
+  }
+
 );
 //获取数据
 
