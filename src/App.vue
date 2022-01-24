@@ -4,9 +4,10 @@
   </div>
   <van-tabbar v-model="active">
     <van-tabbar-item icon="home-o">首页</van-tabbar-item>
-    <van-tabbar-item icon="tv-o">视频</van-tabbar-item>
-    <van-tabbar-item icon="send-gift-o" badge="5">会员</van-tabbar-item>
-    <van-tabbar-item icon="more-o" badge="20">消息</van-tabbar-item>
+    <van-tabbar-item icon="apps-o">商品分类</van-tabbar-item>
+    <van-tabbar-item icon="shopping-cart-o" badge="6">购物车</van-tabbar-item>
+    <!-- <van-tabbar-item icon="more-o" badge="20">消息</van-tabbar-item> -->
+    <!-- <van-icon name="shopping-cart-o" /> -->
     <van-tabbar-item icon="user-o" badge="20">我的</van-tabbar-item>
   </van-tabbar>
 </template>

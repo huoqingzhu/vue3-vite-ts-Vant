@@ -1,4 +1,4 @@
-import {Button,Tab, Tabs,Search,Col, Row,Tabbar, TabbarItem,Loading} from 'vant'
+import {Button,Tab, Tabs,Search,Col, Row,Tabbar, TabbarItem,Loading,Swipe,SwipeItem,} from 'vant'
 import IconFont from "../components/Icon/createIcon";//自定义图标库
 const ant = {
   install(Vue: {
@@ -15,6 +15,8 @@ const ant = {
     Vue.use(Tabbar);
     Vue.use(TabbarItem)
     Vue.use(Loading)
+    Vue.use(Swipe)
+    Vue.use(SwipeItem)
   }
 };
 export default ant;
