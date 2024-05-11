@@ -7,8 +7,11 @@ const routes: Array<RouteRecordRaw> = [
       title: "首页",
       keepAlive: true
     },
+    
     component: () => import("../views/Home/index.vue"),
+  
   },
+
   {
     path: "/login",
     name: "Login",
@@ -18,6 +21,16 @@ const routes: Array<RouteRecordRaw> = [
     },
     component: () => import("../views/Login/index.vue"),
   },
+  {
+        path: "/live",
+        name: "live",
+        meta: {
+          title: "缓存",
+          keepAlive: true
+        },
+        component: () => import("../views/Live/index.vue"),
+      },
+
 ];
 const router = createRouter({
   history: createWebHashHistory(),
